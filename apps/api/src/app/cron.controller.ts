@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('cron')
-export class CronController {
+@Controller('date')
+export class DateController {
   @Get()
-  getData() {
+  getDate() {
     return { date: new Date().toISOString() };
   }
 }

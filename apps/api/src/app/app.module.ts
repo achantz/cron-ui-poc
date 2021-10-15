@@ -1,19 +1,12 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CronController } from './cron.controller';
-import { LoggerMiddleware } from './logger.middleware';
+import { DateController } from './cron.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController, CronController],
+  controllers: [AppController, DateController],
   providers: [AppService],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .forRoutes({ path: '*', method: RequestMethod.ALL });
-  }
-}
+export class AppModule {}

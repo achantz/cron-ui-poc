@@ -30,9 +30,6 @@
   "projects": {
     "api": {
       "tags": []
-    },
-    "nestjs-scheduler": {
-      "tags": []
     }
   }
 }

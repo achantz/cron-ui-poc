@@ -51,49 +51,6 @@
           }
         }
       }
-    },
-    "nestjs-scheduler": {
-      "root": "apps/nestjs-scheduler",
-      "sourceRoot": "apps/nestjs-scheduler/src",
-      "projectType": "application",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/apps/nestjs-scheduler",
-            "main": "apps/nestjs-scheduler/src/main.ts",
-            "tsConfig": "apps/nestjs-scheduler/tsconfig.app.json",
-            "assets": ["apps/nestjs-scheduler/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/nestjs-scheduler/src/environments/environment.ts",
-                  "with": "apps/nestjs-scheduler/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "nestjs-scheduler:build"
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/nestjs-scheduler/**/*.ts"]
-          }
-        }
-      }
     }
   },
   "cli": {

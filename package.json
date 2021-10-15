@@ -5,10 +5,7 @@
   "scripts": {
     "start:api": "nx serve api",
     "build:api": "nx build api",
-    "test:api": "nx test api",
-    "start:scheduler": "nx serve nestjs-scheduler",
-    "build:scheduler": "nx build nestjs-scheduler",
-    "test:scheduler": "nx test nestjs-scheduler"
+    "test:api": "nx test api"
   },
   "private": true,
   "dependencies": {
