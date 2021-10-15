@@ -23,5 +23,3 @@ From the cloned directory run: `docker-compose up`
 ## Accessing Application
 
 Navigate to <http://localhost:8000>
-
-# Test
