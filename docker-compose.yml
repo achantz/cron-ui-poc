@@ -19,7 +19,7 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 3333:3333
-    command: npm start
+    command: npm run start:api
     networks:
       - cron-ui
 networks:
