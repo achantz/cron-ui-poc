@@ -1,15 +1,14 @@
-FROM node:14-alpine AS builder
+FROM node:14-alpine AS development
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
-COPY yarn.lock ./
+COPY package*.json .
 
-RUN yarn install
+RUN npm i
 
 COPY . .
 
-RUN npm run build
+RUN npm run build:api
 
 FROM node:14-alpine as runtime
 
@@ -18,13 +17,12 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
-COPY yarn.lock ./
+COPY package*.json .
 
-RUN yarn install --production=true
+RUN npm i
 
 COPY . .
 
-COPY --from=builder /usr/src/app/dist ./dist
+COPY --from=development /usr/src/app/dist/apps/api ./dist
 
-CMD ["node", "dist/apps/api/main"]
+CMD ["node", "dist/main"]
